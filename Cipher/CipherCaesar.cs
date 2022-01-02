@@ -11,20 +11,20 @@ namespace Cipher
     {
         private List<char> alphabet = new List<char>() { 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я' };
         private List<char> inscryptAlphabet = new List<char>() { 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я' };
-        private Regex isLetter = new Regex(@"[a - zA - Z]");
+        private Regex isLetter = new Regex(@"[а-яА-ЯёЁ]+");
         private StringBuilder _text;
-        public int Offset { get; set; }
+        private int _offset;
     
         public CipherCaesar(string text, int offset)
         {
             _text = new StringBuilder(text.ToLower());
-            Offset = offset;
+            _offset = offset;
         }
 
         public CipherCaesar(string text, int offset, string keyWord)
         {
             _text = new StringBuilder(text.ToLower());
-            Offset = offset;
+            _offset = offset;
         }
 
         public void Inscrypt()
@@ -32,7 +32,7 @@ namespace Cipher
             InscryptAlphabetByOffset();
             for (int i = 0; i < _text.Length; i++)
             {
-                if (isLetter.IsMatch(_text[i].ToString()))
+                if (!isLetter.IsMatch(_text[i].ToString()))
                     continue;
                 _text[i] = inscryptAlphabet[alphabet.IndexOf(_text[i])];
             }
@@ -41,8 +41,8 @@ namespace Cipher
         private void InscryptAlphabetByOffset()
         {
             inscryptAlphabet = new List<char>() { 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я' };
-            inscryptAlphabet.Reverse(0, Offset);
-            inscryptAlphabet.Reverse(Offset, alphabet.Count - Offset);
+            inscryptAlphabet.Reverse(0, _offset);
+            inscryptAlphabet.Reverse(_offset, alphabet.Count - _offset);
             inscryptAlphabet.Reverse(0, alphabet.Count);
         }
 
