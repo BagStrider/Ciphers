@@ -21,12 +21,6 @@ namespace Cipher
             _offset = offset;
         }
 
-        public CipherCaesar(string text, int offset, string keyWord)
-        {
-            _text = new StringBuilder(text.ToLower());
-            _offset = offset;
-        }
-
         public void Inscrypt()
         {
             InscryptAlphabetByOffset();
@@ -35,6 +29,17 @@ namespace Cipher
                 if (!isLetter.IsMatch(_text[i].ToString()))
                     continue;
                 _text[i] = inscryptAlphabet[alphabet.IndexOf(_text[i])];
+            }
+        }
+
+        public void Descrypt()
+        {
+            InscryptAlphabetByOffset();
+            for (int i = 0; i < _text.Length; i++)
+            {
+                if (!isLetter.IsMatch(_text[i].ToString()))
+                    continue;
+                _text[i] = alphabet[inscryptAlphabet.IndexOf(_text[i])];
             }
         }
 

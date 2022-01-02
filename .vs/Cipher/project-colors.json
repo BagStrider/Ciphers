@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "14ce4a9b-b5c0-4a67-93e7-c5d45912bb2d": {
+      "ProjectGuid": "14ce4a9b-b5c0-4a67-93e7-c5d45912bb2d",
+      "DisplayName": "Cipher",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}
