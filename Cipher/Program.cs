@@ -12,7 +12,7 @@ namespace Cipher
             Console.WriteLine(cc);
 
 
-            CipherTrisemus ct = new CipherTrisemus("Андрюха здарова", "где");
+            CipherTrisemus ct = new CipherTrisemus("ВЫЛЕТАЕМПЯТОГО", "бандероль");
             ct.Inscrypt();
             Console.WriteLine(ct);
         }

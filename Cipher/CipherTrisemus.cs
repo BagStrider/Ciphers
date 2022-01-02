@@ -26,6 +26,15 @@ namespace Cipher
         public void Inscrypt()
         {
             InscryptAlphabet();
+            for(int i = 0; i < alphabetMatrix.GetLength(0); i++)
+            {
+                for(int j = 0; j < alphabetMatrix.GetLength(1); j++)
+                {
+                    Console.Write(alphabetMatrix[i,j]);
+                }
+                Console.WriteLine();
+            }
+
             for (int i = 0; i < _text.Length; i++)
             {
                 if (!isLetter.IsMatch(_text[i].ToString()))
@@ -35,7 +44,7 @@ namespace Cipher
                 if (index % 31 == 0)
                     _text[i] = inscryptAlphabet[index];
                 else
-                    _text[i] = inscryptAlphabet[index%31];
+                    _text[i] = inscryptAlphabet[index%32];
             }
         }
 
