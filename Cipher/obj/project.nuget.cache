@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6nj0mOpv7FuutrZbCIpPshOJ/LWhqJ5KyakX+ULQYKa9GAWS5LiKSI6N0u112OUvdoX85mI1bYYZ0Byid/ttvQ==",
+  "success": true,
+  "projectFilePath": "D:\\College\\C# labs\\Cipher\\Cipher\\Cipher.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andrew\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}

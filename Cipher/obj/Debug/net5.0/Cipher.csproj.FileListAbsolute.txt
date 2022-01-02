@@ -1,0 +1,16 @@
+D:\College\C# labs\Cipher\Cipher\bin\Debug\net5.0\Cipher.exe
+D:\College\C# labs\Cipher\Cipher\bin\Debug\net5.0\Cipher.deps.json
+D:\College\C# labs\Cipher\Cipher\bin\Debug\net5.0\Cipher.runtimeconfig.json
+D:\College\C# labs\Cipher\Cipher\bin\Debug\net5.0\Cipher.runtimeconfig.dev.json
+D:\College\C# labs\Cipher\Cipher\bin\Debug\net5.0\Cipher.dll
+D:\College\C# labs\Cipher\Cipher\bin\Debug\net5.0\ref\Cipher.dll
+D:\College\C# labs\Cipher\Cipher\bin\Debug\net5.0\Cipher.pdb
+D:\College\C# labs\Cipher\Cipher\obj\Debug\net5.0\Cipher.csproj.AssemblyReference.cache
+D:\College\C# labs\Cipher\Cipher\obj\Debug\net5.0\Cipher.GeneratedMSBuildEditorConfig.editorconfig
+D:\College\C# labs\Cipher\Cipher\obj\Debug\net5.0\Cipher.AssemblyInfoInputs.cache
+D:\College\C# labs\Cipher\Cipher\obj\Debug\net5.0\Cipher.AssemblyInfo.cs
+D:\College\C# labs\Cipher\Cipher\obj\Debug\net5.0\Cipher.csproj.CoreCompileInputs.cache
+D:\College\C# labs\Cipher\Cipher\obj\Debug\net5.0\Cipher.dll
+D:\College\C# labs\Cipher\Cipher\obj\Debug\net5.0\ref\Cipher.dll
+D:\College\C# labs\Cipher\Cipher\obj\Debug\net5.0\Cipher.pdb
+D:\College\C# labs\Cipher\Cipher\obj\Debug\net5.0\Cipher.genruntimeconfig.cache
