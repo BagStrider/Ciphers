@@ -9,9 +9,10 @@ namespace Cipher
 {
     internal class CipherTrisemus
     {
-        private List<char> alphabet = new List<char>() { 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я' };
+        private List<char> alphabet = new List<char>() { 'а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я' };
         private List<char> inscryptAlphabet = new List<char>();
-        private Regex isLetter = new Regex(@"[а-яА-ЯёЁ]+");
+        private char[,] alphabetMatrix = new char[4,8];
+        private Regex isLetter = new Regex(@"[а-яА-Я]+");
         private StringBuilder _text;
         private string _keyWord;
 
@@ -29,7 +30,12 @@ namespace Cipher
             {
                 if (!isLetter.IsMatch(_text[i].ToString()))
                     continue;
-                _text[i] = inscryptAlphabet[alphabet.IndexOf(_text[i])];
+
+                int index = IndexOf(_text[i]) + alphabetMatrix.GetLength(1);
+                if (index % 31 == 0)
+                    _text[i] = inscryptAlphabet[index];
+                else
+                    _text[i] = inscryptAlphabet[index%31];
             }
         }
 
@@ -44,6 +50,26 @@ namespace Cipher
                     continue;
                 inscryptAlphabet.Add(letter);
             }
+
+            for(int i = 0; i < alphabetMatrix.GetLength(0); i++)
+            {
+                for(int j =0; j < alphabetMatrix.GetLength(1); j++)
+                {
+                    alphabetMatrix[i, j] = inscryptAlphabet[i * alphabetMatrix.GetLength(1) + j]; 
+                }
+            }
+        }
+        private int IndexOf(char letter)
+        {
+            for(int i = 0; i < alphabetMatrix.GetLength(0); i++)
+            {
+                for(int j = 0; j < alphabetMatrix.GetLength(1); j++)
+                {
+                    if (alphabetMatrix[i, j] == letter)
+                        return i * alphabetMatrix.GetLength(1) + j;
+                }
+            }
+            return -1;
         }
 
         public override string ToString()
